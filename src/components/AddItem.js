@@ -8,7 +8,9 @@ export const AddItem = memo(function () {
 
   const changeTitleHandler = (e) => setTitle(e.target.value);
 
-  const addItemHandler = () => {
+  const addItemHandler = (e) => {
+    e.preventDefault();
+    
     if (title) {
       dispatch(addItem({ title }));
       setTitle("");
@@ -16,15 +18,13 @@ export const AddItem = memo(function () {
   };
 
   return (
-    <form className="add-container">
+    <form className="add-container" onSubmit={addItemHandler}>
       <input
         placeholder="Enter title"
         value={title}
         onChange={changeTitleHandler}
       />
-      <button type="submit" onClick={addItemHandler}>
-        Add item
-      </button>
+      <button type="submit">Add item</button>
     </form>
   );
 });
