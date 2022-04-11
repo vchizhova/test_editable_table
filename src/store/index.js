@@ -20,7 +20,6 @@ const reducer = (state = initialState, action) => {
       const filteredItems = state.items.filter(
         (item) => item.id !== action.payload
       );
-      console.log(filteredItems)
       return { ...state, items: filteredItems };
     default:
       return state;
