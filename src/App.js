@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       {data?.map((row, rowIndex) => (
-        <div key={"row" + rowIndex} className="row">
+        <div key={`row_${rowIndex}`} className="row">
           {row?.map((item) => (
             <Item key={item.id} data={item} />
           ))}

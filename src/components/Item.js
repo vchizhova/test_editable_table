@@ -5,7 +5,7 @@ import { saveTitle, deleteItem } from "../store";
 export function Item({ data }) {
   const { title, id } = data;
   const [edit, setEdit] = useState(false);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(title);
   const dispatch = useDispatch();
 
   const editInputTitle = () => {
@@ -22,7 +22,7 @@ export function Item({ data }) {
     }
 
     setEdit(false);
-    setInput("");
+    setInput(input);
   };
 
   const deleteItemHandler = () => {
