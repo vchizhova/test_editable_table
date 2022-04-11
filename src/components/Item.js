@@ -29,14 +29,12 @@ export const Item = memo(function ({ data }) {
   };
 
   return (
-    <>
-      <div key={id}>
-        <div>{title}</div>
-        {edit && <input value={input} onChange={changeInputTitle} />}
-        {!edit && <button onClick={editInputTitle}>Edit</button>}
-        {edit && <button onClick={saveTitleHandler}>Save</button>}
-        <button onClick={deleteItemHandler}>Delete</button>
-      </div>
-    </>
+    <div>
+      <div>{title}</div>
+      {edit && <input value={input} onChange={changeInputTitle} />}
+      {!edit && <button onClick={editInputTitle}>Edit</button>}
+      {edit && <button onClick={saveTitleHandler}>Save</button>}
+      <button onClick={deleteItemHandler}>Delete</button>
+    </div>
   );
 });

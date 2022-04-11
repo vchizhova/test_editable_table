@@ -1,38 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+
+import { Route, Routes, Link } from "react-router-dom";
 
 import "./App.css";
 import { AddItem } from "./components/AddItem";
-import { Item } from "./components/Item";
+import WithGridCss from "./domains/DraggbleGrid";
+import WithoutGridCss from "./domains/Grid";
 
 function App() {
-  const { items } = useSelector((state) => state);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    let rows = 0;
-    const result = [];
-
-    items.forEach((item, i) => {
-      if (i % 4 === 0) {
-        result.push([]);
-        rows += 1;
-      }
-      result[rows - 1].push(item);
-    });
-
-    setData(result);
-  }, [items]);
-
   return (
     <>
-      {data?.map((row, rowIndex) => (
-        <div key={`row_${rowIndex}`} className="row">
-          {row?.map((item) => (
-            <Item key={item.id} data={item} />
-          ))}
-        </div>
-      ))}
+      <nav
+      >
+        <Link to="/">Draggble grid</Link>
+        <Link to="/common">Common grid</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<WithGridCss />} />
+        <Route path="/common" element={<WithoutGridCss />} />
+      </Routes>
+
       <AddItem />
     </>
   );

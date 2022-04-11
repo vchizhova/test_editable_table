@@ -1,5 +1,5 @@
 import { mockData } from "../constants";
-import { ADD_ITEM, DELETE_ITEM, SAVE_TITLE } from "./actions";
+import { ADD_ITEM, DELETE_ITEM, SAVE_TITLE, SET_ITEMS } from "./actions";
 
 const initialState = {
   items: mockData,
@@ -7,6 +7,8 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_ITEMS:
+      return { ...state, items: action.payload };
     case SAVE_TITLE:
       const index = state.items.findIndex((v) => v.id === action.payload.id);
       const items = [...state.items];
