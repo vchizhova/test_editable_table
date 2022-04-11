@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { Item } from "../components/Item";
 
-function DraggbleGrid() {
+function Grid() {
   const { items } = useSelector((state) => state);
   const [data, setData] = useState([]);
 
@@ -37,4 +37,4 @@ function DraggbleGrid() {
   );
 }
 
-export default DraggbleGrid;
+export default Grid;

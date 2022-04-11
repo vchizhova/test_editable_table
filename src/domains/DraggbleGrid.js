@@ -7,7 +7,7 @@ import { setItems } from "../store/actions";
 import { ItemTypes } from "../constants";
 import { ItemDraggble } from "../components/ItemDraggble";
 
-function WithGridCss() {
+function DraggbleGrid() {
   const { items } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -47,7 +47,7 @@ function WithGridCss() {
 
   return (
     <>
-      <div ref={drop} className="container">
+      <div ref={drop} className="grid-container">
         {items.map((item) => (
           <div key={item.id} className="item">
             <ItemDraggble data={item} moveItem={moveItem} findItem={findItem} />
@@ -58,4 +58,4 @@ function WithGridCss() {
   );
 }
 
-export default WithGridCss;
+export default DraggbleGrid;

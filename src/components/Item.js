@@ -29,8 +29,8 @@ export const Item = memo(function ({ data }) {
   };
 
   return (
-    <div>
-      <div>{title}</div>
+    <div className="block">
+      {!edit && <div>{title}</div>}
       {edit && <input value={input} onChange={changeInputTitle} />}
       {!edit && <button onClick={editInputTitle}>Edit</button>}
       {edit && <button onClick={saveTitleHandler}>Save</button>}

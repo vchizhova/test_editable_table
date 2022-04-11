@@ -4,25 +4,26 @@ import { Route, Routes, Link } from "react-router-dom";
 
 import "./App.css";
 import { AddItem } from "./components/AddItem";
-import WithGridCss from "./domains/DraggbleGrid";
-import WithoutGridCss from "./domains/Grid";
+import DraggbleGrid from "./domains/DraggbleGrid";
+import Grid from "./domains/Grid";
 
 function App() {
   return (
-    <>
-      <nav
-      >
-        <Link to="/">Draggble grid</Link>
-        <Link to="/common">Common grid</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<WithGridCss />} />
-        <Route path="/common" element={<WithoutGridCss />} />
-      </Routes>
-
-      <AddItem />
-    </>
+    <div className="main">
+      <div className="container">
+        <header>
+          <nav>
+            <Link to="/">Draggble grid</Link>
+            <Link to="/common">Common grid</Link>
+          </nav>
+          <AddItem />
+        </header>
+        <Routes>
+          <Route path="/" element={<DraggbleGrid />} />
+          <Route path="/common" element={<Grid />} />
+        </Routes>{" "}
+      </div>
+    </div>
   );
 }
 
