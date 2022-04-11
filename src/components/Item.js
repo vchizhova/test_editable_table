@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import React, { useState } from "react";
-import { saveTitle, deleteItem } from "../store";
+import React, { useState, memo } from "react";
+import { saveTitle, deleteItem } from "../store/actions";
 
-export function Item({ data }) {
+export const Item = memo(function ({ data }) {
   const { title, id } = data;
   const [edit, setEdit] = useState(false);
   const [input, setInput] = useState(title);
@@ -25,7 +25,7 @@ export function Item({ data }) {
   };
 
   const deleteItemHandler = () => {
-      dispatch(deleteItem(id));
+    dispatch(deleteItem(id));
   };
 
   return (
@@ -39,4 +39,4 @@ export function Item({ data }) {
       </div>
     </>
   );
-}
+});

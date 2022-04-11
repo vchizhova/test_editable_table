@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import "./App.css";
-
+import { AddItem } from "./components/AddItem";
 import { Item } from "./components/Item";
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
           ))}
         </div>
       ))}
+      <AddItem />
     </>
   );
 }
