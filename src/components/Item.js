@@ -22,7 +22,6 @@ export function Item({ data }) {
     }
 
     setEdit(false);
-    setInput(input);
   };
 
   const deleteItemHandler = () => {
