@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DraggbleGrid />} />
           <Route path="/common" element={<Grid />} />
-        </Routes>{" "}
+        </Routes>
       </div>
     </div>
   );

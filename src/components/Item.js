@@ -1,12 +1,14 @@
 import { useDispatch } from "react-redux";
-import React, { useState, memo } from "react";
+import React, { useState, memo, useEffect } from "react";
 import { saveTitle, deleteItem } from "../store/actions";
 
 export const Item = memo(function ({ data }) {
   const { title, id } = data;
   const [edit, setEdit] = useState(false);
-  const [input, setInput] = useState(title);
+  const [input, setInput] = useState('');
   const dispatch = useDispatch();
+
+  useEffect(()=>setInput(title), [title]);
 
   const editInputTitle = () => {
     setEdit(!edit);

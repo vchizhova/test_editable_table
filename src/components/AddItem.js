@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import React, { Fragment, memo, useState } from "react";
+import React, { memo, useState } from "react";
 import { addItem } from "../store/actions";
 
 export const AddItem = memo(function () {
@@ -10,7 +10,7 @@ export const AddItem = memo(function () {
 
   const addItemHandler = (e) => {
     e.preventDefault();
-    
+
     if (title) {
       dispatch(addItem({ title }));
       setTitle("");

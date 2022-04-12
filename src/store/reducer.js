@@ -2,7 +2,7 @@ import { mockData } from "../constants";
 import { ADD_ITEM, DELETE_ITEM, SAVE_TITLE, SET_ITEMS } from "./actions";
 
 const initialState = {
-  items: mockData,
+  items: mockData(20),
 };
 
 export const reducer = (state = initialState, action) => {
